@@ -3,14 +3,14 @@ import React from "react";
 const NavBar = () => {
   return (
   
-    <nav className="bg-black-800 text-white fixed w-full overflow-auto top-0 left-0 right-0 nm ">
+    <nav className="bg-black-800 fixed w-full overflow-auto top-0 left-0 right-0 nm ">
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
         <div className="flex items-center">
           <div className="mr-3 text-xl font-bold bg-red-500">Logo</div>
           <ul className="flex space-x-4">
-            <li className="hover:text-black-300">Menu 1</li>
-            <li className="hover:text-black-300">Menu 2</li>
-            <li className="hover:text-black-300">Menu 3</li>
+            <li className="text-black-300 ">Menu 1</li>
+            <li className="text-black-300">Menu 2</li>
+            <li className="text-black-300">Menu 3</li>
           </ul>
         </div>
         <div className="flex items-center">
