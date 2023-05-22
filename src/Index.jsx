@@ -5,6 +5,7 @@ import TrendingTop from './components/TrendingTop'
 import Collections from './components/Collections'
 import Footer from './components/Footer'
 
+
 function index() {
   return (
   
