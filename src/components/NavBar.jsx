@@ -2,8 +2,7 @@ import React from "react";
 
 const NavBar = () => {
   return (
-  
-    <nav className="bg-black-800 fixed w-full overflow-auto top-0 left-0 right-0 nm ">
+    <nav className="bg-black-800 w-full overflow-auto top-0 left-0 right-0 nm ">
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
         <div className="flex items-center">
           <div className="mr-3 text-xl font-bold">Logo</div>
@@ -25,9 +24,7 @@ const NavBar = () => {
             </button>
           </div>
           <div className="ml-4 relative">
-            <button className="focus:outline-none">
-              {/* Profile Icon */}
-            </button>
+            <button className="focus:outline-none">{/* Profile Icon */}</button>
             <ul className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg hidden">
               <li className="py-2 px-4 hover:bg-gray-100">Profile</li>
               <li className="py-2 px-4 hover:bg-gray-100">Settings</li>
@@ -35,9 +32,7 @@ const NavBar = () => {
             </ul>
           </div>
           <div className="ml-4">
-            <button className="focus:outline-none">
-              {/* Cart Icon */}
-            </button>
+            <button className="focus:outline-none">{/* Cart Icon */}</button>
           </div>
         </div>
       </div>

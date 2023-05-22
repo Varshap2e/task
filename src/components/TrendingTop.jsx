@@ -1,4 +1,5 @@
 import React from "react";
+import Col1 from "../assets/col1.jpeg";
 
 const TrendingTop = () => {
   return (
@@ -133,7 +134,7 @@ const TrendingTop = () => {
         <div className="grid grid-cols-5 grid-flow-col gap-4">
           <div>01</div>
           <div>
-            <img src="#" />
+            <img src={Col1} className="h-20 w-20 rounded-md" />
           </div>
           <div>
             {" "}
