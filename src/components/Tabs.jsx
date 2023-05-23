@@ -1,70 +1,187 @@
 import React, { useState } from "react";
+import Banner from "./Banner";
 
 const Tabs = () => {
-  const [activeTab, setActiveTab] = useState(1);
+  const [activeTab, setActiveTab] = useState("all");
 
-  const handleTabClick = (tabNumber) => {
-    setActiveTab(tabNumber);
+  const carouselData = [
+    {
+      id: 1,
+      image: "path/to/image1.jpg",
+      title: "Card 0",
+      description: "This is the description of Card 1.",
+    },
+    {
+      id: 2,
+      image: "path/to/image2.jpg",
+      title: "Card 2",
+      description: "This is the description of Card 2.",
+    },
+    {
+      id: 3,
+      image: "path/to/image3.jpg",
+      title: "Card 3",
+      description: "This is the description of Card 3.",
+    },
+    {
+      id: 4,
+      image: "path/to/image4.jpg",
+      title: "Card 4",
+      description: "This is the description of Card 4.",
+    },
+    {
+      id: 5,
+      image: "path/to/image5.jpg",
+      title: "Card 5",
+      description: "This is the description of Card 5.",
+    },
+  ];
+
+  const carouselData2 = [
+    {
+      id: 1,
+      image: "path/to/image1.jpg",
+      title: "Card 9",
+      description: "This is the description of Card 1.",
+    },
+    {
+      id: 2,
+      image: "path/to/image2.jpg",
+      title: "Card 2",
+      description: "This is the description of Card 2.",
+    },
+    {
+      id: 3,
+      image: "path/to/image3.jpg",
+      title: "Card 3",
+      description: "This is the description of Card 3.",
+    },
+    {
+      id: 4,
+      image: "path/to/image4.jpg",
+      title: "Card 4",
+      description: "This is the description of Card 4.",
+    },
+    {
+      id: 5,
+      image: "path/to/image5.jpg",
+      title: "Card 5",
+      description: "This is the description of Card 5.",
+    },
+  ];
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
   };
+
   return (
-    <div className="max-w-md mx-auto">
-      <div className="flex border-b border-gray-300">
+    <div className="w-full">
+      <div className="flex justify-center">
         <button
-          className={`py-2 px-4 ${
-            activeTab === 1 ? "bg-gray-200" : "bg-white"
+          className={`px-4 py-2 mx-2 rounded ${
+            activeTab === "all"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-300 text-gray-600"
           }`}
-          onClick={() => handleTabClick(1)}
+          onClick={() => handleTabClick("all")}
         >
-          Tab 1
+          All
         </button>
         <button
-          className={`py-2 px-4 ${
-            activeTab === 2 ? "bg-gray-200" : "bg-white"
+          className={`px-4 py-2 mx-2 rounded ${
+            activeTab === "arts"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-300 text-gray-600"
           }`}
-          onClick={() => handleTabClick(2)}
+          onClick={() => handleTabClick("arts")}
         >
-          Tab 2
+          Arts
         </button>
         <button
-          className={`py-2 px-4 ${
-            activeTab === 3 ? "bg-gray-200" : "bg-white"
+          className={`px-4 py-2 mx-2 rounded ${
+            activeTab === "gaming"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-300 text-gray-600"
           }`}
-          onClick={() => handleTabClick(3)}
+          onClick={() => handleTabClick("gaming")}
         >
-          Tab 3
+          Gaming
         </button>
         <button
-          className={`py-2 px-4 ${
-            activeTab === 4 ? "bg-gray-200" : "bg-white"
+          className={`px-4 py-2 mx-2 rounded ${
+            activeTab === "pictures"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-300 text-gray-600"
           }`}
-          onClick={() => handleTabClick(4)}
+          onClick={() => handleTabClick("pictures")}
         >
-          Tab 4
+          Pictures
         </button>
         <button
-          className={`py-2 px-4 ${
-            activeTab === 5 ? "bg-gray-200" : "bg-white"
+          className={`px-4 py-2 mx-2 rounded ${
+            activeTab === "maintaining"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-300 text-gray-600"
           }`}
-          onClick={() => handleTabClick(5)}
+          onClick={() => handleTabClick("maintaining")}
         >
-          Tab 5
+          Maintaining
         </button>
         <button
-          className={`py-2 px-4 ${
-            activeTab === 6 ? "bg-gray-200" : "bg-white"
+          className={`px-4 py-2 mx-2 rounded ${
+            activeTab === "vectors"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-300 text-gray-600"
           }`}
-          onClick={() => handleTabClick(6)}
+          onClick={() => handleTabClick("vectors")}
         >
-          Tab 6
+          Vectors
         </button>
       </div>
-      <div className="p-4">
-        {activeTab === 1 && <div>Content for Tab 1</div>}
-        {activeTab === 2 && <div>Content for Tab 2</div>}
-        {activeTab === 3 && <div>Content for Tab 3</div>}
-        {activeTab === 4 && <div>Content for Tab 4</div>}
-        {activeTab === 5 && <div>Content for Tab 5</div>}
-        {activeTab === 6 && <div>Content for Tab 6</div>}
+
+      <div className="mt-4">
+        {activeTab === "all" && (
+          <div className="p-4">
+            {/* Replace with your Carousel component */}
+            <h2>All Tab Content</h2>
+            <Banner props={carouselData} numberOfSLides={4} />
+          </div>
+        )}
+        {activeTab === "arts" && (
+          <div className="p-4">
+            {/* Replace with your Carousel component */}
+            <h2>Arts Tab Content</h2>
+            <Banner props={carouselData2} numberOfSLides={1} />
+          </div>
+        )}
+        {activeTab === "gaming" && (
+          <div className="p-4">
+            {/* Replace with your Carousel component */}
+            <h2>Gaming Tab Content</h2>
+            <Banner props={carouselData} numberOfSLides={4} />
+          </div>
+        )}
+        {activeTab === "pictures" && (
+          <div className="p-4">
+            {/* Replace with your Carousel component */}
+            <h2>Pictures Tab Content</h2>
+            <Banner props={carouselData} numberOfSLides={2} />
+          </div>
+        )}
+        {activeTab === "maintaining" && (
+          <div className="p-4">
+            {/* Replace with your Carousel component */}
+            <h2>Maintaining Tab Content</h2>
+            <Banner props={carouselData2} numberOfSLides={4} />
+          </div>
+        )}
+        {activeTab === "vectors" && (
+          <div className="p-4">
+            {/* Replace with your Carousel component */}
+            <h2>Vectors Tab Content</h2>
+            <Banner props={carouselData2} numberOfSLides={3} />
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,53 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-// import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import img1 from '../assets/img1.jpeg';
-import img2 from '../assets/img2.jpeg';
-import img3 from '../assets/img3.jpeg';
-import img4 from '../assets/img4.jpeg';
-
-const Banner = () => {
+const Banner = ({ props, numberOfSLides }) => {
+  const [slidNumber, setSlidNumber] = useState(numberOfSLides);
   const settings = {
     dots: true,
-    fade: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToShow: slidNumber,
+    slidesToScroll: 1,
   };
-  return (
-    <div className="flex justify-center items-center m-0 w-full">
-        <h1>banner</h1>
-        <div>
-          <button>all</button>
-          <br />
-          <button>all</button>
-          <br />
-          <button>all</button>
-          <br />
-          <button>all</button>
-          <br />
 
-        </div>
-        <div className="bg-green-500 ">
-        <h2>Fade</h2>
-        <Slider {...settings}>
-          <div>
-            <img src={img1} />
+  // useEffect(() => {
+  //   console.log(props, "datasss");
+  // }, [props]);
+
+  return (
+    <div className="px-6 py-6 bg-red-200">
+      <Slider {...settings}>
+        {props.map((slide) => (
+          <div
+            key={slide.id}
+            className="bg-white p-4 mx-2" // Added mx-2 class for horizontal gap
+          >
+            <img src={slide.image} alt={`Card ${slide.id}`} />
+            <h3 className="text-xl font-bold">{slide.title}</h3>
+            <p>{slide.description}</p>
           </div>
-          <div>
-            <img src={img2} />
-          </div>
-          <div>
-            <img src={img3} />
-          </div>
-          <div>
-            <img src={img4} />
-          </div>
-        </Slider>
-      </div>
+        ))}
+      </Slider>
     </div>
-);
+  );
 };
+
 export default Banner;

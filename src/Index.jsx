@@ -484,7 +484,7 @@ function index() {
       },
     ],
   };
-  console.log("data", myJson?.art);
+  //   console.log("data", myJson?.art);
   return (
     <div>
       <section className="flex flex-col">
@@ -492,7 +492,7 @@ function index() {
 
         <Tabs />
 
-        <Banner />
+        {/* <Banner /> */}
 
         <TrendingTop />
 

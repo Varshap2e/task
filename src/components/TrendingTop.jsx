@@ -3,13 +3,16 @@ import Col1 from "../assets/col1.jpeg";
 
 const TrendingTop = () => {
   return (
-    <div>
-      <h1>TrendingTop</h1>
+    <div className=" items-center m-auto w-full px-4">
       <div className="flex justify-between py-5">
         <div>
-          <button>Trending</button>
+          <button className="text-2xl font-bold text-blue-500 hover:text-blue-700">
+            Trending
+          </button>
           <span> | </span>
-          <button>Top</button>
+          <button className="text-2xl font-bold text-blue-500 hover:text-blue-700">
+            Top
+          </button>
         </div>
         <div className="flex flex-row gap-3">
           <div className="relative inline-block">
@@ -45,8 +48,8 @@ const TrendingTop = () => {
         </div>
       </div>
       {/* underline */}
-      <div>
-        <div className="flex flex-col md:flex-row justify-start"></div>
+      <div className="pb-8">
+        <div className="flex flex-col md:flex-row justify-start w-full h-1 bg-slate-300"></div>
       </div>
       {/* trending list */}
 
