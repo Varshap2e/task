@@ -76,7 +76,7 @@ const Tabs = () => {
 
   return (
     <div className="w-full">
-      <div className="flex justify-center">
+      <div className="flex justify-start pl-4 pt-4 container">
         <button
           className={`px-4 py-2 mx-2 rounded ${
             activeTab === "all"

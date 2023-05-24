@@ -489,14 +489,15 @@ function index() {
     <div>
       <section className="flex flex-col">
         <NavBar />
+        <div className="px-5 py-5 mx-5 my-4">
+          <Tabs />
 
-        <Tabs />
+          {/* <Banner /> */}
 
-        {/* <Banner /> */}
+          <TrendingTop />
 
-        <TrendingTop />
-
-        <Collections />
+          <Collections />
+        </div>
 
         <Footer />
       </section>

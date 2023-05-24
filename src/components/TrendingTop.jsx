@@ -1,9 +1,23 @@
-import React from "react";
-import Col1 from "../assets/col1.jpeg";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const TrendingTop = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/art") // Replace with your API endpoint
+      .then((response) => {
+        setData(response.data[0].Trending);
+        console.log(response.data[0].Trending, "data api");
+      })
+      .catch((error) => {
+        console.error("Error fetching carousel data:", error);
+      });
+  }, []);
+
   return (
-    <div className=" items-center m-auto w-full px-4">
+    <div className="items-center m-auto w-full px-4 container">
       <div className="flex justify-between py-5">
         <div>
           <button className="text-2xl font-bold text-blue-500 hover:text-blue-700">
@@ -16,13 +30,17 @@ const TrendingTop = () => {
         </div>
         <div className="flex flex-row gap-3">
           <div className="relative inline-block">
-            <div className="block appearance-none bg-white border border-gray-300 rounded-full py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+            <div className="block appearance-none bg-white border border-gray-300 rounded-full py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 flex gap-2">
               <button>1h</button>
+              <div className="border-r border-gray-300 h-6"></div>
               <button>2h</button>
+              <div className="border-r border-gray-300 h-6"></div>
               <button>3h</button>
+              <div className="border-r border-gray-300 h-6"></div>
               <button>4h</button>
             </div>
           </div>
+
           <div>
             <div className="relative inline-block">
               <select className="block appearance-none bg-white border border-gray-300 rounded-full py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
@@ -47,158 +65,21 @@ const TrendingTop = () => {
           </div>
         </div>
       </div>
-      {/* underline */}
+
       <div className="pb-8">
         <div className="flex flex-col md:flex-row justify-start w-full h-1 bg-slate-300"></div>
       </div>
-      {/* trending list */}
 
-      <div className="grid grid-rows-6 grid-flow-col gap-4">
-        <div className="grid grid-cols-5 grid-flow-col gap-4">
-          <div>#</div>
-          <div>collection</div>
-
-          <div>floor price</div>
-          <div>volume</div>
-        </div>
-        <div className="grid grid-cols-5 grid-flow-col gap-4">
-          <div>01</div>
-          <div>
-            <img src="#" />
+      <div className="grid grid-rows-5 grid-flow-col gap-4">
+        {data.map((item) => (
+          <div className="grid grid-cols-5 grid-flow-col" key={item.id}>
+            <div>{item.id}</div>
+            <img src={item.image} className="w-10 h-10 rounded-md" />
+            <div>{item.title}</div>
+            <div>{item.floor}</div>
+            <div>{item.volume}</div>
           </div>
-          <div>
-            {" "}
-            <h4>Saved Souls</h4>
-            <p>Floor:0.09 ETH</p>
-          </div>
-
-          <div>0.09 ETH</div>
-        </div>
-        <div className="grid grid-cols-5 grid-flow-col gap-4">
-          <div>01</div>
-          <div>
-            <img src="#" />
-          </div>
-          <div>
-            {" "}
-            <h4>Saved Souls</h4>
-            <p>Floor:0.09 ETH</p>
-          </div>
-
-          <div>0.09 ETH</div>
-        </div>
-        <div className="grid grid-cols-5 grid-flow-col gap-4">
-          <div>01</div>
-          <div>
-            <img src="#" />
-          </div>
-          <div>
-            {" "}
-            <h4>Saved Souls</h4>
-            <p>Floor:0.09 ETH</p>
-          </div>
-
-          <div>0.09 ETH</div>
-        </div>
-        <div className="grid grid-cols-5 grid-flow-col gap-4">
-          <div>01</div>
-          <div>
-            <img src="#" />
-          </div>
-          <div>
-            {" "}
-            <h4>Saved Souls</h4>
-            <p>Floor:0.09 ETH</p>
-          </div>
-
-          <div>0.09 ETH</div>
-        </div>
-        <div className="grid grid-cols-5 grid-flow-col gap-4">
-          <div>01</div>
-          <div>
-            <img src="#" />
-          </div>
-          <div>
-            {" "}
-            <h4>Saved Souls</h4>
-            <p>Floor:0.09 ETH</p>
-          </div>
-
-          <div>0.09 ETH</div>
-        </div>
-
-        <div className="grid grid-cols-5 grid-flow-col gap-4">
-          <div>#</div>
-          <div>collection</div>
-
-          <div>floor price</div>
-          <div>volume</div>
-        </div>
-        <div className="grid grid-cols-5 grid-flow-col gap-4">
-          <div>01</div>
-          <div>
-            <img src={Col1} className="h-20 w-20 rounded-md" />
-          </div>
-          <div>
-            {" "}
-            <h4>Saved Souls</h4>
-            <p>Floor:0.09 ETH</p>
-          </div>
-
-          <div>0.09 ETH</div>
-        </div>
-        <div className="grid grid-cols-5 grid-flow-col gap-4">
-          <div>01</div>
-          <div>
-            <img src="#" />
-          </div>
-          <div>
-            {" "}
-            <h4>Saved Souls</h4>
-            <p>Floor:0.09 ETH</p>
-          </div>
-
-          <div>0.09 ETH</div>
-        </div>
-        <div className="grid grid-cols-5 grid-flow-col gap-4">
-          <div>01</div>
-          <div>
-            <img src="#" />
-          </div>
-          <div>
-            {" "}
-            <h4>Saved Souls</h4>
-            <p>Floor:0.09 ETH</p>
-          </div>
-
-          <div>0.09 ETH</div>
-        </div>
-        <div className="grid grid-cols-5 grid-flow-col gap-4">
-          <div>01</div>
-          <div>
-            <img src="#" />
-          </div>
-          <div>
-            {" "}
-            <h4>Saved Souls</h4>
-            <p>Floor:0.09 ETH</p>
-          </div>
-
-          <div>0.09 ETH</div>
-        </div>
-        <div className="grid grid-cols-5 grid-flow-col gap-4">
-          <div>01</div>
-          <div>
-            <img src="#" />
-          </div>
-          <div>
-            {" "}
-            <h4>Saved Souls</h4>
-            <p>Floor:0.09 ETH</p>
-          </div>
-
-          <div>0.09 ETH</div>
-        </div>
+        ))}
       </div>
     </div>
   );

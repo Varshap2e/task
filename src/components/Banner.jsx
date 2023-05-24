@@ -13,12 +13,8 @@ const Banner = ({ props, numberOfSLides }) => {
     slidesToScroll: 1,
   };
 
-  // useEffect(() => {
-  //   console.log(props, "datasss");
-  // }, [props]);
-
   return (
-    <div className="px-6 py-6 bg-red-200">
+    <div className="px-6 py-6 ">
       <Slider {...settings}>
         {props.map((slide) => (
           <div

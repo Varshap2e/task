@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.slick-arrow {
+    background: black; /* Set initial background */
+  }
+  
+  .slick-arrow:hover {
+    background: black; /* Apply black background on hover */
+  }
+  
