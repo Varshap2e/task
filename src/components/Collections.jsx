@@ -9,10 +9,9 @@ const Collections = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/art") // Replace with your API endpoint
+      .get("http://localhost:8000/art") // Replace with your API endpoint
       .then((response) => {
         setCarouselData(response.data[0].Trending);
-        console.log(response.data[0].Trending, "data api");
       })
       .catch((error) => {
         console.error("Error fetching carousel data:", error);
@@ -68,11 +67,15 @@ const Collections = () => {
             key={slide.id}
             className="bg-white p-4 mx-2" // Added mx-2 class for horizontal gap
           >
-            <img src={slide.image} alt={`Card ${slide.id}`} />
-            <h3 className="text-xl font-bold">{slide.title}</h3>
-            <h6>{slide.floor}</h6>
-            <h6>{slide.volume}</h6>
-            <p>{slide.description}</p>
+            <div className="flex flex-col w-fit">
+              <img src={slide.image} alt={`Card ${slide.id}`} />
+              <div className="flex flex-col w-20 h-10">
+                <h3 className="text-xl font-bold">{slide.title}</h3>
+                <h6>{slide.floor}</h6>
+                <h6>{slide.volume}</h6>
+                <p>{slide.description}</p>
+              </div>
+            </div>
           </div>
         ))}
       </Slider>

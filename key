@@ -1,12 +1,12 @@
-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=key
+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=key
 
 
  Resources
-  http://localhost:3000/art
-  http://localhost:3000/Gaming
-  http://localhost:3000/Membership
-  http://localhost:3000/PFPs
-  http://localhost:3000/Photography
+  http://localhost:8000/art
+  http://localhost:8000/Gaming
+  http://localhost:8000/Membership
+  http://localhost:8000/PFPs
+  http://localhost:8000/Photography
 
   Home
-  http://localhost:3000
+  http://localhost:8000

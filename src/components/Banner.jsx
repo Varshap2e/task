@@ -14,15 +14,15 @@ const Banner = ({ props, numberOfSLides }) => {
   };
 
   return (
-    <div className="px-6 py-6 ">
+    <div className="px-6 py-6 bg-gray-800">
       <Slider {...settings}>
         {props.map((slide) => (
           <div
             key={slide.id}
-            className="bg-white p-4 mx-2" // Added mx-2 class for horizontal gap
+            className="bg-gray-800 p-4 mx-2" // Added mx-2 class for horizontal gap
           >
             <img src={slide.image} alt={`Card ${slide.id}`} />
-            <h3 className="text-xl font-bold">{slide.title}</h3>
+            <h3 className="text-xl text-white font-bold">{slide.title}</h3>
             <p>{slide.description}</p>
           </div>
         ))}

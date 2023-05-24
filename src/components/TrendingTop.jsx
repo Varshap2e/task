@@ -6,7 +6,7 @@ const TrendingTop = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/art") // Replace with your API endpoint
+      .get("http://localhost:8000/art") // Replace with your API endpoint
       .then((response) => {
         setData(response.data[0].Trending);
         console.log(response.data[0].Trending, "data api");
@@ -17,7 +17,7 @@ const TrendingTop = () => {
   }, []);
 
   return (
-    <div className="items-center m-auto w-full px-4 container">
+    <div className="items-center m-auto w-full px-4 ">
       <div className="flex justify-between py-5">
         <div>
           <button className="text-2xl font-bold text-blue-500 hover:text-blue-700">

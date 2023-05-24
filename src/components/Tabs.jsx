@@ -1,41 +1,58 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Banner from "./Banner";
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("all");
+  const [carouselData, setCarouselData] = useState([]);
 
-  const carouselData = [
-    {
-      id: 1,
-      image: "path/to/image1.jpg",
-      title: "Card 0",
-      description: "This is the description of Card 1.",
-    },
-    {
-      id: 2,
-      image: "path/to/image2.jpg",
-      title: "Card 2",
-      description: "This is the description of Card 2.",
-    },
-    {
-      id: 3,
-      image: "path/to/image3.jpg",
-      title: "Card 3",
-      description: "This is the description of Card 3.",
-    },
-    {
-      id: 4,
-      image: "path/to/image4.jpg",
-      title: "Card 4",
-      description: "This is the description of Card 4.",
-    },
-    {
-      id: 5,
-      image: "path/to/image5.jpg",
-      title: "Card 5",
-      description: "This is the description of Card 5.",
-    },
-  ];
+  useEffect(() => {
+    console.log("useffect lopala");
+    axios
+      .get("http://localhost:8000/art") // Replace with your API endpoint
+      .then((response) => {
+        console.log("response ", response);
+        setCarouselData(response.data[0].video);
+        console.log(response.data[0].video, "data api");
+      })
+      .catch((error) => {
+        console.error("Error fetching carousel data:", error);
+      });
+  }, []);
+
+  // console.log("carouselData", carouselData);
+  // const carouselData = [
+  //   {
+  //     id: 1,
+  //     image: "path/to/image1.jpg",
+  //     title: "Card 0",
+  //     description: "This is the description of Card 1.",
+  //   },
+  //   {
+  //     id: 2,
+  //     image: "path/to/image2.jpg",
+  //     title: "Card 2",
+  //     description: "This is the description of Card 2.",
+  //   },
+  //   {
+  //     id: 3,
+  //     image: "path/to/image3.jpg",
+  //     title: "Card 3",
+  //     description: "This is the description of Card 3.",
+  //   },
+  //   {
+  //     id: 4,
+  //     image: "path/to/image4.jpg",
+  //     title: "Card 4",
+  //     description: "This is the description of Card 4.",
+  //   },
+  //   {
+  //     id: 5,
+  //     image: "path/to/image5.jpg",
+  //     title: "Card 5",
+  //     description: "This is the description of Card 5.",
+  //   },
+  // ];
 
   const carouselData2 = [
     {
@@ -75,7 +92,7 @@ const Tabs = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-transparent">
       <div className="flex justify-start pl-4 pt-4 container">
         <button
           className={`px-4 py-2 mx-2 rounded ${
@@ -144,14 +161,14 @@ const Tabs = () => {
           <div className="p-4">
             {/* Replace with your Carousel component */}
             <h2>All Tab Content</h2>
-            <Banner props={carouselData} numberOfSLides={4} />
+            <Banner props={carouselData} numberOfSLides={1} />
           </div>
         )}
         {activeTab === "arts" && (
           <div className="p-4">
             {/* Replace with your Carousel component */}
             <h2>Arts Tab Content</h2>
-            <Banner props={carouselData2} numberOfSLides={1} />
+            <Banner props={carouselData} numberOfSLides={4} />
           </div>
         )}
         {activeTab === "gaming" && (

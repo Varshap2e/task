@@ -488,17 +488,18 @@ function index() {
   return (
     <div>
       <section className="flex flex-col">
-        <NavBar />
+        <div className="bg-gray-800">
+          <NavBar />
+          <div className="px-5 py-5 mx-5 my-4">
+            <Tabs />
+          </div>
+        </div>
+        {/* <Banner /> */}
         <div className="px-5 py-5 mx-5 my-4">
-          <Tabs />
-
-          {/* <Banner /> */}
-
           <TrendingTop />
 
           <Collections />
         </div>
-
         <Footer />
       </section>
     </div>
