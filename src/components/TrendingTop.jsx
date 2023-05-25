@@ -72,7 +72,7 @@ const TrendingTop = () => {
 
       <div className="grid grid-rows-5 grid-flow-col gap-4">
         {data.map((item) => (
-          <div className="grid grid-cols-5 grid-flow-col" key={item.id}>
+          <div className="grid grid-cols-5 grid-flow-col gap-1" key={item.id}>
             <div>{item.id}</div>
             <img src={item.image} className="w-10 h-10 rounded-md" />
             <div>{item.title}</div>
