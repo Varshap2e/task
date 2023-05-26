@@ -70,12 +70,14 @@ const TrendingTop = () => {
         <div className="flex flex-col md:flex-row justify-start w-full h-1 bg-slate-300"></div>
       </div>
 
-      <div className="grid grid-rows-5 grid-flow-col gap-4">
+      <div className="grid lg:grid-rows-5  grid-flow-row lg:grid-flow-col  gap-4">
         {data.map((item) => (
           <div className="grid grid-cols-5 grid-flow-col gap-1" key={item.id}>
-            <div>{item.id}</div>
+            <div className="flex justify-end p-4">{item.id}</div>
             <img src={item.image} className="w-10 h-10 rounded-md" />
-            <div>{item.title}</div>
+            <div className="flex text-md font-medium justify-start m-4">
+              {item.title}
+            </div>
             <div>{item.floor}</div>
             <div>{item.volume}</div>
           </div>

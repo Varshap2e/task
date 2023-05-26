@@ -14,20 +14,26 @@ const Banner = ({ props, numberOfSLides }) => {
   };
 
   return (
-    <div className="px-6 py-6 bg-gray-800">
+    <div className="px-6 py-6 ">
       <Slider {...settings}>
         {props.map((slide) => (
           <div
             key={slide.id}
-            className="bg-gray-800 p-4 mx-2  rounded overflow-hidden h-full w-full " // Added mx-2 class for horizontal gap
+            className="bg-gray-800 relative  rounded overflow-hidden h-full w-full " // Added mx-2 class for horizontal gap
           >
             <img
               src={slide.image}
               alt={`Card ${slide.id}`}
               className="w-full rounded-md"
             />
-            <h3 className="text-xl text-white font-bold">{slide.title}</h3>
-            <p>{slide.description}</p>
+            <div className="absolute top-[80%] left-[12%] transform -translate-x-1/2 -translate-y-1/2 text-white text-left">
+              <img
+                src={slide.image}
+                className="h-12 w-12 rounded-md border-4 border-inherit "
+              />
+              <h2 className="text-2xl font-bold">{slide.title}</h2>
+              <p className="text-lg">{slide.by}</p>
+            </div>
           </div>
         ))}
       </Slider>

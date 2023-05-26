@@ -28,7 +28,7 @@ const Collections = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
         },
       },
       {
@@ -56,11 +56,71 @@ const Collections = () => {
               key={slide.id}
               className="bg-white p-4 mx-2 " // Added mx-2 class for horizontal gap
             >
+              <div className="flex flex-col w-fit max-w-sm bg-white border border-gray-200 rounded-lg drop-shadow-xl dark:bg-gray-800 dark:border-gray-700 ">
+                <img
+                  src={slide.image}
+                  alt={`Card ${slide.id}`}
+                  className="rounded-t-lg h-80 w-80"
+                />
+                <div className="p-2  h-[137px] lg:max-h-96  max-w-full overflow-hidden">
+                  <div className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    <h3 className="text-xl font-bold">{slide.title}</h3>
+                  </div>
+                  <h6>{slide.floor}</h6>
+                  <h6>{slide.volume}</h6>
+                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    {slide.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+
+      <div className="px-6 carousel my-12 mx-auto">
+        <h2 className="text-2xl font-bold">Collection</h2>
+        <Slider {...settings}>
+          {carouselData.map((slide) => (
+            <div
+              key={slide.id}
+              className="bg-white p-4 mx-2 " // Added mx-2 class for horizontal gap
+            >
               <div className="flex flex-col w-fit max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
                 <img
                   src={slide.image}
                   alt={`Card ${slide.id}`}
-                  className="rounded-t-lg h-80 w-full"
+                  className="rounded-t-lg h-80 w-80"
+                />
+                <div className="p-5  h-[137px] lg:max-h-96  max-w-full overflow-hidden">
+                  <div className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    <h3 className="text-xl font-bold">{slide.title}</h3>
+                  </div>
+                  <h6>{slide.floor}</h6>
+                  <h6>{slide.volume}</h6>
+                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                    {slide.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+
+      <div className="px-6 carousel my-12 mx-auto">
+        <h2 className="text-2xl font-bold">Collection</h2>
+        <Slider {...settings}>
+          {carouselData.map((slide) => (
+            <div
+              key={slide.id}
+              className="bg-white p-4 mx-2 " // Added mx-2 class for horizontal gap
+            >
+              <div className="flex flex-col w-fit max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
+                <img
+                  src={slide.image}
+                  alt={`Card ${slide.id}`}
+                  className="rounded-t-lg h-80 w-80"
                 />
                 <div className="p-5  h-[137px] lg:max-h-96  max-w-full overflow-hidden">
                   <div className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">

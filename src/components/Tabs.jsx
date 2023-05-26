@@ -93,7 +93,7 @@ const Tabs = () => {
 
   return (
     <div className="w-full bg-transparent">
-      <div className="flex justify-start pl-4 pt-4 container">
+      <div className="flex justify-start  flex-col md:flex-row gap-2 md:gap-0 pl-4 pt-4 container">
         <button
           className={`px-4 py-2 mx-2 rounded ${
             activeTab === "all"

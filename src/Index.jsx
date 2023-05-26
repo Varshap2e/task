@@ -7,6 +7,19 @@ import Footer from "./components/Footer";
 import Tabs from "./components/Tabs";
 
 function index() {
+  // const [carouselData, setCarouselData] = useState([]);
+
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:8000/art") // Replace with your API endpoint
+  //     .then((response) => {
+  //       setCarouselData(response.data[0].Trending);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching carousel data:", error);
+  //     });
+  // }, []);
+
   let myJson = {
     art: [
       {
@@ -488,13 +501,12 @@ function index() {
   return (
     <div>
       <section className="flex flex-col">
-        <div className="bg-gray-800">
+        <div className=" ">
           <NavBar />
           <div className="px-5 py-5 mx-5 my-4">
             <Tabs />
           </div>
         </div>
-        {/* <Banner /> */}
         <div className="px-5 py-5 mx-5 my-4">
           <TrendingTop />
 

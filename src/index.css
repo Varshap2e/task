@@ -11,3 +11,6 @@
     background: black; /* Apply black background on hover */
   }
   
+  .bg-Bg {
+    background-image: url(./assets/banner1.jpg);
+  }
