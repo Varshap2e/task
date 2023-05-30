@@ -5,6 +5,9 @@ import TrendingTop from "./components/TrendingTop";
 import Collections from "./components/Collections";
 import Footer from "./components/Footer";
 import Tabs from "./components/Tabs";
+import TabCaro from "./components/TabCaro";
+import Tre from "./components/Tre";
+import TrendingBar from "./components/TrendingBar";
 
 function index() {
   // const [carouselData, setCarouselData] = useState([]);
@@ -501,16 +504,18 @@ function index() {
   return (
     <div>
       <section className="flex flex-col">
-        <div className=" ">
-          <NavBar />
-          <div className="px-5 py-5 mx-5 my-4">
-            <Tabs />
-          </div>
-        </div>
+        <NavBar />
         <div className="px-5 py-5 mx-5 my-4">
+          <Tabs />
+        </div>
+
+        {/* <TabCaro /> */}
+        <div className="px-5 py-5 mx-5 my-4">
+          <TrendingBar />
           <TrendingTop />
 
           <Collections />
+          <Tre />
         </div>
         <Footer />
       </section>

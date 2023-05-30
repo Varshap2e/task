@@ -4,13 +4,48 @@
 
 
 .slick-arrow {
-    background: black; /* Set initial background */
+    background: pink; /* Set initial background */
   }
   
   .slick-arrow:hover {
-    background: black; /* Apply black background on hover */
+    background: pink; /* Apply black background on hover */
   }
   
   .bg-Bg {
     background-image: url(./assets/banner1.jpg);
   }
+
+  .swiper-button-prev,
+.swiper-button-next {
+  width: 60px;
+  height: 65px;
+  
+  border-radius: 100%;
+  background-color: white;
+}
+
+.swiper-button-prev:before,
+.swiper-button-next:before {
+  font-size: 24px;
+  color: black;
+}
+
+.swiper-button-prev {
+  left: 20px;
+}
+
+.swiper-button-next {
+  right: 20px;
+}
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+  width:13px;
+  color: black;
+}
+
+
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+  width:30px;
+  color: black;
+}
+

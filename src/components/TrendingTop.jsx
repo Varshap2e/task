@@ -17,8 +17,8 @@ const TrendingTop = () => {
   }, []);
 
   return (
-    <div className="items-center m-auto w-full px-4 ">
-      <div className="flex justify-between py-5">
+    <div className="items-center m-auto w-full px-2  overflow-x-auto md:overflow-hidden pb-5">
+      {/* <div className="flex justify-between py-5">
         <div>
           <button className="text-2xl font-bold text-blue-500 hover:text-blue-700">
             Trending
@@ -68,18 +68,49 @@ const TrendingTop = () => {
 
       <div className="pb-8">
         <div className="flex flex-col md:flex-row justify-start w-full h-1 bg-slate-300"></div>
-      </div>
+      </div> */}
 
-      <div className="grid lg:grid-rows-5  grid-flow-row lg:grid-flow-col  gap-4">
+      {/* <div className="">
+        <div className="">
+          one
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+          </ul>
+        </div>
+        <div>
+          two
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+          </ul>
+        </div>
+      </div> */}
+
+      <div className="grid grid-rows-5 grid-flow-row grid-flow-col  gap-2">
         {data.map((item) => (
-          <div className="grid grid-cols-5 grid-flow-col gap-1" key={item.id}>
-            <div className="flex justify-end p-4">{item.id}</div>
-            <img src={item.image} className="w-10 h-10 rounded-md" />
-            <div className="flex text-md font-medium justify-start m-4">
-              {item.title}
+          <div
+            className="grid grid-cols grid-flow-col auto-cols-max  gap-4"
+            key={item.id}
+          >
+            <div className="py-6 gap-3 w-3 h-4">{item.id}</div>
+            <img
+              src={item.image}
+              className="w-[70px] h-[70px] rounded-md object-cover"
+            />
+            <div className="grid grid-cols-3 gap-8 place-items-end font-medium">
+              <div className="text-md  w-[100px] md:w-[132px] capitalize  h-[40px]">
+                {item.title}
+              </div>
+              <div className="">{item.floor}</div>
+              <div>{item.volume}</div>
             </div>
-            <div>{item.floor}</div>
-            <div>{item.volume}</div>
           </div>
         ))}
       </div>

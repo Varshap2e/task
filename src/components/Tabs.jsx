@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Banner from "./Banner";
+import TabCaro from "./TabCaro";
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("all");
@@ -91,14 +92,18 @@ const Tabs = () => {
     setActiveTab(tab);
   };
 
+  const shouldEnableScroll = (numberOfSlides) => {
+    return numberOfSlides === 4;
+  };
+
   return (
     <div className="w-full bg-transparent">
-      <div className="flex justify-start  flex-col md:flex-row gap-2 md:gap-0 pl-4 pt-4 container">
+      <div className="flex  overflow-x-auto md:overflow-hidden justify-start flex-row gap-2 md:gap-0 pl-4 pt-4 container">
         <button
           className={`px-4 py-2 mx-2 rounded ${
             activeTab === "all"
-              ? "bg-blue-500 text-white"
-              : "bg-gray-300 text-gray-600"
+              ? "bg-trasparent text-white"
+              : "bg-gray-100 text-gray-600"
           }`}
           onClick={() => handleTabClick("all")}
         >
@@ -107,8 +112,8 @@ const Tabs = () => {
         <button
           className={`px-4 py-2 mx-2 rounded ${
             activeTab === "arts"
-              ? "bg-blue-500 text-white"
-              : "bg-gray-300 text-gray-600"
+              ? "bg-trasparent text-white"
+              : "bg-gray-100 text-gray-600"
           }`}
           onClick={() => handleTabClick("arts")}
         >
@@ -117,8 +122,8 @@ const Tabs = () => {
         <button
           className={`px-4 py-2 mx-2 rounded ${
             activeTab === "gaming"
-              ? "bg-blue-500 text-white"
-              : "bg-gray-300 text-gray-600"
+              ? "bg-trasparent text-white"
+              : "bg-gray-100 text-gray-600"
           }`}
           onClick={() => handleTabClick("gaming")}
         >
@@ -127,8 +132,8 @@ const Tabs = () => {
         <button
           className={`px-4 py-2 mx-2 rounded ${
             activeTab === "pictures"
-              ? "bg-blue-500 text-white"
-              : "bg-gray-300 text-gray-600"
+              ? "bg-trasparent text-white"
+              : "bg-gray-100 text-gray-600"
           }`}
           onClick={() => handleTabClick("pictures")}
         >
@@ -137,8 +142,8 @@ const Tabs = () => {
         <button
           className={`px-4 py-2 mx-2 rounded ${
             activeTab === "maintaining"
-              ? "bg-blue-500 text-white"
-              : "bg-gray-300 text-gray-600"
+              ? "bg-trasparent text-white"
+              : "bg-gray-100 text-gray-600"
           }`}
           onClick={() => handleTabClick("maintaining")}
         >
@@ -147,8 +152,8 @@ const Tabs = () => {
         <button
           className={`px-4 py-2 mx-2 rounded ${
             activeTab === "vectors"
-              ? "bg-blue-500 text-white"
-              : "bg-gray-300 text-gray-600"
+              ? "bg-trasparent text-white"
+              : "bg-gray-100 text-gray-600"
           }`}
           onClick={() => handleTabClick("vectors")}
         >
@@ -160,42 +165,46 @@ const Tabs = () => {
         {activeTab === "all" && (
           <div className="p-4">
             {/* Replace with your Carousel component */}
-            <h2>All Tab Content</h2>
+
             <Banner props={carouselData} numberOfSLides={1} />
           </div>
         )}
         {activeTab === "arts" && (
-          <div className="p-4">
+          <div className="p-4 gap-2">
             {/* Replace with your Carousel component */}
-            <h2>Arts Tab Content</h2>
+
             <Banner props={carouselData} numberOfSLides={4} />
           </div>
         )}
         {activeTab === "gaming" && (
           <div className="p-4">
             {/* Replace with your Carousel component */}
-            <h2>Gaming Tab Content</h2>
+
             <Banner props={carouselData} numberOfSLides={4} />
           </div>
         )}
         {activeTab === "pictures" && (
           <div className="p-4">
             {/* Replace with your Carousel component */}
-            <h2>Pictures Tab Content</h2>
+
             <Banner props={carouselData} numberOfSLides={2} />
           </div>
         )}
         {activeTab === "maintaining" && (
-          <div className="p-4">
+          <div
+            className={`p-4 ${
+              shouldEnableScroll(1) ? "overflow-x-scroll" : ""
+            }`}
+          >
             {/* Replace with your Carousel component */}
-            <h2>Maintaining Tab Content</h2>
+
             <Banner props={carouselData2} numberOfSLides={4} />
           </div>
         )}
         {activeTab === "vectors" && (
           <div className="p-4">
             {/* Replace with your Carousel component */}
-            <h2>Vectors Tab Content</h2>
+
             <Banner props={carouselData2} numberOfSLides={3} />
           </div>
         )}
