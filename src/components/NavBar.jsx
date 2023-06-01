@@ -91,7 +91,7 @@ const NavBar = () => {
               <span className="mt-2 mr-5 h-[10px] hidden md:inline"> | </span>
             </div>
 
-            <div className="relative inline-block">
+            <div className="relative inline-block hidden lg:block">
               <button
                 className="bg-transparent text-black-300 font-semibold pt-2 px-4 focus:outline-none"
                 onClick={toggleDropdown}
@@ -117,7 +117,7 @@ const NavBar = () => {
               )}
             </div>
 
-            <div className="relative inline-block">
+            <div className="relative inline-block hidden lg:block">
               <button
                 className="bg-transparent text-black-300 font-semibold pt-2 px-4 focus:outline-none"
                 onClick={toggleCard}
@@ -149,7 +149,7 @@ const NavBar = () => {
               <input
                 type="text"
                 placeholder="Search"
-                className="px-4 py-2 w-[10px] md:w-[215px] lg:w-[770px] rounded-lg bg-gray-700 text-white focus:outline-none focus:bg-gray-600"
+                className="px-4 py-2 w-[30px] sm:w-[380px] md:w-[485px] lg:w-[488px] xl:w-[748px] 2xl:[800px] rounded-lg bg-gray-700 text-white focus:outline-none focus:bg-gray-600"
               />
               <button className="absolute right-2 top-1/2 transform -translate-y-1/2">
                 {/* Search Icon */}
@@ -157,23 +157,24 @@ const NavBar = () => {
               </button>
             </div>
 
-            <div className="flex felx-col px-2 border-2 rounded-lg">
-              <div className="flex flex-row py-2 gap-2">
-                <FaWallet />
-                <div className="text-basic font-medium">Connect Wallet</div>
+            <div className="flex flex-row px-2 lg:border-2 rounded-lg">
+              <div className="flex flex-row py-2 gap-2 hidden lg:block">
+                <div className="text-basic font-medium w-[130px]">
+                  Connect Wallet
+                </div>
               </div>
-              <div className="ml-1 pl-1 relative border-l-2">
+              <div className="ml-1 pl-1 relative lg:border-l-2">
                 <button
                   className="focus:outline-none my-auto h-full w-auto"
                   onClick={toggleProfileMenu}
-                  onBlur={() => setIsDropdownOpend(false)}
+                  onBlur={() => setIsDropdownOpen(false)}
                   onMouseEnter={toggleProfileMenu}
                 >
                   <div className="h-8 w-8 flex items-center justify-around scale-150">
                     <FaRegUserCircle />
                   </div>
                 </button>
-                {isDropdownOpend && (
+                {isDropdownOpen && (
                   <div className="absolute z-10 mt-2 bg-white rounded-lg shadow-lg">
                     <ul className="py-2">
                       <li className="text-black-300 px-4 py-2" src="#">

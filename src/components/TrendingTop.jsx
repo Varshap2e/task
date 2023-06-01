@@ -17,7 +17,7 @@ const TrendingTop = () => {
   }, []);
 
   return (
-    <div className="items-center m-auto w-full px-2  overflow-x-auto md:overflow-hidden pb-5">
+    <div className="TreadingItems items-center m-auto w-full px-2  overflow-x-auto pb-5">
       {/* <div className="flex justify-between py-5">
         <div>
           <button className="text-2xl font-bold text-blue-500 hover:text-blue-700">
@@ -105,7 +105,7 @@ const TrendingTop = () => {
               className="w-[70px] h-[70px] rounded-md object-cover"
             />
             <div className="grid grid-cols-3 gap-8 place-items-end font-medium">
-              <div className="text-md  w-[100px] md:w-[132px] capitalize  h-[40px]">
+              <div className="text-md  w-[100px] md:w-[230px] capitalize  h-[40px]">
                 {item.title}
               </div>
               <div className="">{item.floor}</div>

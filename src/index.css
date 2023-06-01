@@ -15,7 +15,7 @@
     background-image: url(./assets/banner1.jpg);
   }
 
-  .swiper-button-prev,
+  /* .swiper-button-prev,
 .swiper-button-next {
   width: 60px;
   height: 65px;
@@ -38,6 +38,7 @@
   right: 20px;
 }
 
+
 .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
   width:13px;
   color: black;
@@ -47,5 +48,73 @@
 .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
   width:30px;
   color: black;
+} */
+
+/* Styles for swiper buttons on all screens */
+.swiper-button-prev,
+.swiper-button-next {
+  width: 60px;
+  height: 65px;
+  border-radius: 100%;
+  background-color: white;
+}
+
+.swiper-button-prev:before,
+.swiper-button-next:before {
+  font-size: 24px;
+  color: black;
+}
+
+.swiper-button-prev {
+  left: 20px;
+}
+
+.swiper-button-next {
+  right: 20px;
+}
+
+
+
+/* Hide swiper buttons on small screens */
+@media (max-width: 767px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+}
+
+/* Display swiper buttons on medium screens and larger */
+@media (min-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: flex;
+  }
+
+  .swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  width: 13px;
+  color: black;
+}
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  width: 30px;
+  color: black;
+}
+}
+
+.TabsDiv,
+.TreadingItems::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.TabsDiv::-webkit-scrollbar-track,
+.TreadingItems::-webkit-scrollbar-track {
+  background-color: #ffffff00;
+}
+
+.TabsDiv::-webkit-scrollbar-thumb,
+.TreadingItems::-webkit-scrollbar-thumb {
+  background-color: #ffffff00;
 }
 

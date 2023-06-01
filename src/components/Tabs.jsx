@@ -98,7 +98,7 @@ const Tabs = () => {
 
   return (
     <div className="w-full bg-transparent">
-      <div className="flex  overflow-x-auto md:overflow-hidden justify-start flex-row gap-2 md:gap-0 pl-4 pt-4 container">
+      <div className="TabsDiv flex  overflow-x-auto md:overflow-hidden justify-start flex-row gap-2 md:gap-0 pl-4 pt-4 container">
         <button
           className={`px-4 py-2 mx-2 rounded ${
             activeTab === "all"
@@ -163,28 +163,28 @@ const Tabs = () => {
 
       <div className="mt-4">
         {activeTab === "all" && (
-          <div className="p-4">
+          <div className="">
             {/* Replace with your Carousel component */}
 
             <Banner props={carouselData} numberOfSLides={1} />
           </div>
         )}
         {activeTab === "arts" && (
-          <div className="p-4 gap-2">
+          <div>
             {/* Replace with your Carousel component */}
 
             <Banner props={carouselData} numberOfSLides={4} />
           </div>
         )}
         {activeTab === "gaming" && (
-          <div className="p-4">
+          <div>
             {/* Replace with your Carousel component */}
 
             <Banner props={carouselData} numberOfSLides={4} />
           </div>
         )}
         {activeTab === "pictures" && (
-          <div className="p-4">
+          <div>
             {/* Replace with your Carousel component */}
 
             <Banner props={carouselData} numberOfSLides={2} />
@@ -202,7 +202,7 @@ const Tabs = () => {
           </div>
         )}
         {activeTab === "vectors" && (
-          <div className="p-4">
+          <div>
             {/* Replace with your Carousel component */}
 
             <Banner props={carouselData2} numberOfSLides={3} />
