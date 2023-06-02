@@ -66,31 +66,34 @@
 }
 
 .swiper-button-prev {
-  left: 20px;
+  left: -1px;
 }
 
 .swiper-button-next {
-  right: 20px;
+  right: -1px;
 }
 
 
 
 /* Hide swiper buttons on small screens */
-@media (max-width: 767px) {
+
   .swiper-button-prev,
   .swiper-button-next {
     display: none;
   }
+/* Display swiper buttons on medium screens and larger */
+
+.CollBtn:hover .swiper-button-prev,
+.CollBtn:hover .swiper-button-next{
+  display: flex;
 }
 
-/* Display swiper buttons on medium screens and larger */
-@media (min-width: 768px) {
-  .swiper-button-prev,
-  .swiper-button-next {
-    display: flex;
-  }
+.BannerBtn:hover .swiper-button-prev,
+.BannerBtn:hover .swiper-button-next {
+  display: flex;
+}
 
-  .swiper-button-next:after,
+.swiper-button-next:after,
 .swiper-rtl .swiper-button-prev:after {
   width: 13px;
   color: black;
@@ -101,9 +104,8 @@
   width: 30px;
   color: black;
 }
-}
 
-.TabsDiv,
+.TabsDiv::-webkit-scrollbar ,
 .TreadingItems::-webkit-scrollbar {
   width: 0.5em;
 }

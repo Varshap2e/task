@@ -13,23 +13,23 @@
             "title":" jigg",
             "by":"anni",
             "video":"https://res.cloudinary.com/dghwkppwt/video/upload/v1685175900/high1_g2syl5.mp4",
-            "image":"https://res.cloudinary.com/dghwkppwt/image/upload/v1684932443/banner4_itdhht.jpg",
+            "image":"https://res.cloudinary.com/dghwkppwt/image/upload/v1685643110/top2_wpqm7k.avif",
             "items":"3,700",
             "volume":"3.98 ETH"
         },{
             "id":"3",
             "title":" tyoh",
             "by":"pria",
-            "video":"https://res.cloudinary.com/dghwkppwt/video/upload/v1685176036/high_jyhvet.mp4",
-            "image":"https://res.cloudinary.com/dghwkppwt/image/upload/v1684932443/banner4_itdhht.jpg",
+            "video":"",
+            "image":"https://res.cloudinary.com/dghwkppwt/image/upload/v1685643111/banner8_oszbw7.svg",
             "items":"3,700",
             "volume":"1.008 ETH"
         },{
             "id":"4",
             "title":" caruu",
             "by":"meee",
-            "video":"https://res.cloudinary.com/dghwkppwt/video/upload/v1685176036/high_jyhvet.mp4",
-            "image":"https://res.cloudinary.com/dghwkppwt/image/upload/v1684932443/banner4_itdhht.jpg",
+            "video":"",
+            "image":"https://res.cloudinary.com/dghwkppwt/image/upload/v1685643109/banner_aatli6.avif",
             "items":"3,700",
             "volume":"1.078 ETH"
         }],
@@ -58,35 +58,35 @@
             "id":"4",
             "title":"Gemesis",
             "floor":"0.03",
-            "image":"https://res.cloudinary.com/dghwkppwt/image/upload/v1684913302/col3_vc2qsx.avif",
+            "image":"https://res.cloudinary.com/dghwkppwt/image/upload/v1685643109/top4_kavb6i.webp",
             "image2":"#",
             "volume":"76 ETH"
         },{
             "id":"5",
             "title":"Memo Presents",
             "floor":"0.02",
-            "image":"https://res.cloudinary.com/dghwkppwt/image/upload/v1684913302/col3_vc2qsx.avif",
+            "image":"https://res.cloudinary.com/dghwkppwt/image/upload/v1685643109/top3_gawox3.avif",
             "image2":"#",
             "volume":"98 ETH"
         },{
             "id":"6",
             "title":"terminal",
             "floor":"0.142",
-            "image":"https://res.cloudinary.com/dghwkppwt/image/upload/v1684913302/col3_vc2qsx.avif",
+            "image":"https://res.cloudinary.com/dghwkppwt/image/upload/v1685643110/top2_wpqm7k.avif",
             "image2":"#",
             "volume":"177 ETH"
         },{
             "id":"7",
             "title":"edition",
             "floor":"0.472",
-            "image":"https://res.cloudinary.com/dghwkppwt/image/upload/v1684913302/col3_vc2qsx.avif",
+            "image":"https://res.cloudinary.com/dghwkppwt/image/upload/v1685643110/cat_tcquxo.avif",
             "image2":"#",
             "volume":"67 ETH"
         },{
             "id":"8",
             "title":"membership",
             "floor":"2.42",
-            "image":"https://res.cloudinary.com/dghwkppwt/image/upload/v1684913302/col3_vc2qsx.avif",
+            "image":"https://res.cloudinary.com/dghwkppwt/image/upload/v1685671285/8f942239cb83160763d63846ab800575_pqur3f.avif",
             "image2":"#",
             "volume":"89 ETH"
         },{
@@ -100,7 +100,7 @@
             "id":"10",
             "title":"lawless",
             "floor":"0.52",
-            "image":"https://res.cloudinary.com/dghwkppwt/image/upload/v1684913302/col3_vc2qsx.avif",
+            "image":"https://res.cloudinary.com/dghwkppwt/image/upload/v1685671286/dbd3bdeedf8902fe8a432da14dac7916_k86foh.webp",
             "image2":"#",
             "volume":"17 ETH"
         }]

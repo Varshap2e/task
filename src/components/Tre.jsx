@@ -24,7 +24,7 @@ const Tre = () => {
   }, []);
 
   return (
-    <div>
+    <div className="CollBtn">
       <div className="text-2xl font-bold p-2 my-4">
         Asian American & Pacific Islander Heritage Month Spotlight
       </div>
@@ -48,15 +48,15 @@ const Tre = () => {
             spaceBetween: 10,
           },
           1200: {
-            slidesPerView: 5,
+            slidesPerView: 6,
             spaceBetween: 10,
           },
         }}
       >
         {carouselData.map((slide) => (
           <SwiperSlide key={slide.id}>
-            <div className="bg-white pb-4 pt-4">
-              <div className="flex flex-col w-full max-w-sm bg-white border border-gray-200 rounded-lg drop-shadow-lg dark:bg-gray-800 dark:border-gray-700 overflow-hidden hover:shadow-2xl hover:-translate-y-1 hover:scale-105 transition-all duration-300 hover:cursor-pointer">
+            <div className="bg-white py-4 px-2">
+              <div className="flex flex-col w-full max-w-sm bg-white border border-gray-200 rounded-lg drop-shadow-sm dark:bg-gray-800 dark:border-gray-700 overflow-hidden hover:shadow-2xl hover:-translate-y-1 hover:scale-105 transition-all duration-300 hover:cursor-pointer">
                 <img
                   src={slide.image}
                   alt={`Card ${slide.id}`}

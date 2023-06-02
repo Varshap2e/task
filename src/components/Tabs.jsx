@@ -55,38 +55,38 @@ const Tabs = () => {
   //   },
   // ];
 
-  const carouselData2 = [
-    {
-      id: 1,
-      image: "path/to/image1.jpg",
-      title: "Card 9",
-      description: "This is the description of Card 1.",
-    },
-    {
-      id: 2,
-      image: "path/to/image2.jpg",
-      title: "Card 2",
-      description: "This is the description of Card 2.",
-    },
-    {
-      id: 3,
-      image: "path/to/image3.jpg",
-      title: "Card 3",
-      description: "This is the description of Card 3.",
-    },
-    {
-      id: 4,
-      image: "path/to/image4.jpg",
-      title: "Card 4",
-      description: "This is the description of Card 4.",
-    },
-    {
-      id: 5,
-      image: "path/to/image5.jpg",
-      title: "Card 5",
-      description: "This is the description of Card 5.",
-    },
-  ];
+  // const carouselData2 = [
+  //   {
+  //     id: 1,
+  //     image: "path/to/image1.jpg",
+  //     title: "Card 9",
+  //     description: "This is the description of Card 1.",
+  //   },
+  //   {
+  //     id: 2,
+  //     image: "path/to/image2.jpg",
+  //     title: "Card 2",
+  //     description: "This is the description of Card 2.",
+  //   },
+  //   {
+  //     id: 3,
+  //     image: "path/to/image3.jpg",
+  //     title: "Card 3",
+  //     description: "This is the description of Card 3.",
+  //   },
+  //   {
+  //     id: 4,
+  //     image: "path/to/image4.jpg",
+  //     title: "Card 4",
+  //     description: "This is the description of Card 4.",
+  //   },
+  //   {
+  //     id: 5,
+  //     image: "path/to/image5.jpg",
+  //     title: "Card 5",
+  //     description: "This is the description of Card 5.",
+  //   },
+  // ];
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
