@@ -95,7 +95,7 @@ const Collections = () => {
         >
           {carouselData.map((slide) => (
             <SwiperSlide key={slide.id}>
-              <div className="bg-white py-4 px-2">
+              <div className=" py-4 px-2">
                 <div className="flex flex-col w-full max-w-sm bg-white border border-gray-200 rounded-lg drop-shadow-sm dark:bg-gray-800 dark:border-gray-700 overflow-hidden hover:shadow-2xl hover:-translate-y-1 hover:scale-105 transition-all duration-300 hover:cursor-pointer">
                   <img
                     src={slide.image}
@@ -104,13 +104,14 @@ const Collections = () => {
                   />
                   <div className="h-[100px] lg:max-h-96 max-w-full overflow-hidden m-2 px-2 pt-2">
                     <div className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      <h3 className="text-xl font-bold">{slide.title}</h3>
+                      <h3 className="text-xl font-bold h-[65px] capitalize">
+                        {slide.title}
+                      </h3>
                     </div>
-                    <h6>{slide.floor}</h6>
-                    <h6>{slide.volume}</h6>
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                      {slide.description}
-                    </p>
+                    <div className="flex flex-row  flex-end justify-between items-stretch">
+                      <div className="text-md self-end ">{slide.floor}</div>
+                      <div className="text-md self-end">{slide.volume}</div>
+                    </div>
                   </div>
                 </div>
               </div>

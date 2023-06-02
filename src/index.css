@@ -123,3 +123,10 @@
   background-color: #ffffff00;
 }
 
+.ImgTrans{
+  transition: 0.8s all;
+}
+
+.ImgTrans:hover{
+  transform:scale(1.1);
+}

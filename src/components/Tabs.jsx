@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Banner from "./Banner";
 import TabCaro from "./TabCaro";
+import BannerCard from "./BannerCard";
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("all");
@@ -12,7 +13,7 @@ const Tabs = () => {
     axios
       .get("http://localhost:8000/art") // Replace with your API endpoint
       .then((response) => {
-        console.log("response ", response);
+        console.log("response  data", response);
         setCarouselData(response.data[0].video);
         console.log(response.data[0].video, "data api");
       })
@@ -166,7 +167,7 @@ const Tabs = () => {
           <div className="">
             {/* Replace with your Carousel component */}
 
-            <Banner props={carouselData} numberOfSLides={1} />
+            <BannerCard props={carouselData} numberOfSLides={4} />
           </div>
         )}
         {activeTab === "arts" && (
@@ -180,14 +181,14 @@ const Tabs = () => {
           <div>
             {/* Replace with your Carousel component */}
 
-            <Banner props={carouselData} numberOfSLides={4} />
+            <BannerCard props={carouselData} numberOfSLides={4} />
           </div>
         )}
         {activeTab === "pictures" && (
           <div>
             {/* Replace with your Carousel component */}
 
-            <Banner props={carouselData} numberOfSLides={2} />
+            <Banner props={carouselData} numberOfSLides={4} />
           </div>
         )}
         {activeTab === "maintaining" && (
@@ -198,14 +199,14 @@ const Tabs = () => {
           >
             {/* Replace with your Carousel component */}
 
-            <Banner props={carouselData2} numberOfSLides={4} />
+            <BannerCard props={carouselData} numberOfSLides={4} />
           </div>
         )}
         {activeTab === "vectors" && (
           <div>
             {/* Replace with your Carousel component */}
 
-            <Banner props={carouselData2} numberOfSLides={3} />
+            <Banner props={carouselData} numberOfSLides={3} />
           </div>
         )}
       </div>
