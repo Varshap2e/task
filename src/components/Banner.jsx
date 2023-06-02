@@ -18,7 +18,6 @@ const Banner = ({ props, numberOfSlides, color }) => {
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         cssMode={true}
         navigation={true}
-        pagination={true}
         slidesPerView={numberOfSlides}
         spaceBetween={10}
         loop

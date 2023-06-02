@@ -53,9 +53,10 @@
 /* Styles for swiper buttons on all screens */
 .swiper-button-prev,
 .swiper-button-next {
-  width: 60px;
-  height: 65px;
+  width: 40px;
+  height: 43px;
   border-radius: 100%;
+  background-color: white;
 
 }
 
@@ -66,11 +67,11 @@
 }
 
 .swiper-button-prev {
-  left: -1px;
+  left: 13px;
 }
 
 .swiper-button-next {
-  right: -1px;
+  right: 13px;
 }
 
 
@@ -95,14 +96,16 @@
 
 .swiper-button-next:after,
 .swiper-rtl .swiper-button-prev:after {
-  width: 13px;
+  width: 8px;
   color: black;
+  font-size: x-large;
 }
 
 .swiper-button-prev:after,
 .swiper-rtl .swiper-button-next:after {
-  width: 30px;
+  width: 15px;
   color: black;
+  font-size: x-large;
 }
 
 .TabsDiv::-webkit-scrollbar ,
