@@ -30,6 +30,7 @@ const Tre = () => {
       </div>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
+        cssMode={true}
         spaceBetween={0}
         navigation
         onSwiper={(swiper) => console.log(swiper)}
@@ -48,7 +49,7 @@ const Tre = () => {
             spaceBetween: 10,
           },
           1200: {
-            slidesPerView: 6,
+            slidesPerView: 5,
             spaceBetween: 10,
           },
         }}

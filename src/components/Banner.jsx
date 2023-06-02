@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -6,24 +6,26 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
 const Banner = ({ props, numberOfSlides, color }) => {
-  const [slideNumber, setSlideNumber] = useState(numberOfSlides);
+  const autoplay = {
+    delay: 3000, // Delay between slides in milliseconds
+    disableOnInteraction: false, // Enable/disable autoplay on user interaction
+  };
 
   return (
-    <div className="px-6 py-6 " style={{ background: color }}>
+    <div className="px-6 py-6" style={{ background: color }}>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
-        navigation
-        slidesPerView={slideNumber}
+        cssMode={true}
+        navigation={true}
+        pagination={true}
+        slidesPerView={numberOfSlides}
         spaceBetween={10}
         loop
+        autoplay={autoplay}
         className="BannerBtn relative"
       >
         {props.map((slide) => (
-          // ...
-
           <SwiperSlide key={slide.id}>
             <div className="relative drop-shadow-xl rounded-lg overflow-x-auto md:overflow-hidden h-full w-full px-2">
               <div className="w-full h-full w-[90%]">
@@ -55,8 +57,6 @@ const Banner = ({ props, numberOfSlides, color }) => {
               </div>
             </div>
           </SwiperSlide>
-
-          // ...
         ))}
       </Swiper>
     </div>

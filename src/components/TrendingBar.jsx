@@ -23,7 +23,7 @@ const TrendingBar = () => {
         {/* trending and top button */}
         <div>
           <button
-            className={`text-2xl font-bold text-blue-500 hover:text-blue-700  ${
+            className={`text-2xl font-bold text-black hover:text-gray-700  ${
               activeButton === "trending" ? "border-b-4 border-slate-950" : ""
             }`}
             onClick={() => handleButtonClick("trending")}
@@ -32,7 +32,7 @@ const TrendingBar = () => {
           </button>
           <span> | </span>
           <button
-            className={`text-2xl font-bold text-blue-500 hover:text-blue-700  ${
+            className={`text-2xl font-bold text-black hover:text-gray-700  ${
               activeButton === "top" ? " border-b-4 border-slate-950" : ""
             }`}
             onClick={() => handleButtonClick("top")}
@@ -70,6 +70,13 @@ const TrendingBar = () => {
                     onClick={() => handleOptionSelect("4h")}
                   >
                     4h
+                  </button>
+                  {/* Render the button when options are visible */}
+                  <button
+                    className="block w-full text-left hover:bg-gray-100 py-1 px-2"
+                    onClick={toggleDropdown}
+                  >
+                    Close
                   </button>
                 </div>
               ) : (

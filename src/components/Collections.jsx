@@ -39,6 +39,7 @@ const Collections = () => {
       </div>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
+        cssMode={true}
         spaceBetween={0}
         navigation
         onSwiper={handleSwiper}
@@ -57,7 +58,7 @@ const Collections = () => {
             spaceBetween: 10,
           },
           1200: {
-            slidesPerView: 6,
+            slidesPerView: 5,
             spaceBetween: 10,
           },
         }}
