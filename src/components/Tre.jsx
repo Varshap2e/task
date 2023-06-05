@@ -65,8 +65,17 @@ const Tre = () => {
                 />
                 <div className="h-[100px] lg:max-h-96 max-w-full overflow-hidden m-2 px-2 pt-2">
                   <div className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    <h3 className="text-xl font-bold h-[65px] capitalize">
+                    <h3 className="flex flex-row text-xl font-bold h-[65px] capitalize">
                       {slide.title}
+                      {slide.tick ? (
+                        <img
+                          className="w-[1.5rem] h-[1.5rem]"
+                          src={slide.tick}
+                          alt=""
+                        />
+                      ) : (
+                        <div className="w-[1.5rem] h-[1.5rem]"></div>
+                      )}
                     </h3>
                   </div>
                   <div className="flex flex-row  flex-end justify-between items-stretch">

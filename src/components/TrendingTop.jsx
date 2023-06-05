@@ -84,6 +84,7 @@ const TrendingTop = () => {
             <div className="text-md w-[100px] md:w-[230px] capitalize h-[40px]">
               Title
             </div>
+
             <div className="h-[40px]">Collection</div>
             <div className="h-[40px]">Volume</div>
           </div>
@@ -114,8 +115,17 @@ const TrendingTop = () => {
               alt={`Art ${item.id}`}
             />
             <div className="grid grid-cols-3 gap-8 place-items-end font-medium pr-8">
-              <div className="text-md w-[100px] md:w-[230px] capitalize h-[40px]">
+              <div className="flex flex-row text-md w-[100px] md:w-[230px] capitalize h-[40px]">
                 {item.title}
+                {item.tick ? (
+                  <img
+                    className="w-[1.5rem] h-[1.5rem]"
+                    src={item.tick}
+                    alt=""
+                  />
+                ) : (
+                  <div className="w-[1.5rem] h-[1.5rem]"></div>
+                )}
               </div>
               <div className="h-[40px]">{item.floor}</div>
               <div className="h-[40px]"> {item.volume}</div>

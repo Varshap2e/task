@@ -5,6 +5,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+// import { ImageProvider } from "./ImageContext";
+// import { useContext } from "react";
 
 const BannerCard = ({ props, color }) => {
   const autoplay = {
@@ -13,7 +15,7 @@ const BannerCard = ({ props, color }) => {
   };
 
   return (
-    <div className="px-6 py-6" style={{ background: color }}>
+    <div className="px-6 py-6 bg-transparent">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         cssMode={true}
@@ -46,21 +48,34 @@ const BannerCard = ({ props, color }) => {
                   <video
                     src={slide.video}
                     alt={`Card ${slide.id}`}
-                    className="w-full h-[335px] object-cover rounded-lg "
+                    className="ImgTrans w-full h-[335px] object-cover rounded-lg "
                     autoPlay
                     loop
                     muted
                   />
                 ) : (
+                  // <ImageProvider>
                   <img
                     src={slide.image}
                     alt={`Card ${slide.id}`}
                     className="ImgTrans w-full h-[335px] object-cover rounded-lg"
                   />
+                  // </ImageProvider>
                 )}
                 <div className="absolute top-[60%] left-[5%] p-4 text-white hidden lg:block">
-                  <h2 className="text-2xl font-bold">{slide.title}</h2>
-                  <p className="text-lg">{slide.by}</p>
+                  <h2 className="flex flex-row p-2 text-2xl font-bold">
+                    {slide.title}
+                    {slide.tick ? (
+                      <img
+                        className="w-[1.5rem] h-[1.5rem]"
+                        src={slide.tick}
+                        alt=""
+                      />
+                    ) : (
+                      <div className="w-[1.5rem] h-[1.5rem]"></div>
+                    )}
+                  </h2>
+                  <p className="text-lg pl-[10px]">{slide.by}</p>
                 </div>
               </div>
             </div>

@@ -14,6 +14,7 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDropdownOpend, setIsDropdownOpend] = useState(false);
+  const [isDropdownOpens, setIsDropdownOpens] = useState(false);
   const [isCardOpend, setisCardOpend] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -32,6 +33,10 @@ const NavBar = () => {
 
   const toggleProfileMenu = () => {
     setIsDropdownOpend(!isDropdownOpend);
+  };
+
+  const toggleProfileMenus = () => {
+    setIsDropdownOpens(!isDropdownOpens);
   };
 
   useEffect(() => {
@@ -68,7 +73,7 @@ const NavBar = () => {
     <>
       <nav
         className={`${
-          isScrolled ? "bg-white" : "bg-transparent"
+          isScrolled ? "bg-white" : "bg-blue-100"
         } w-full text-black nm sticky top-0 z-50`}
       >
         <div className="container mx-auto px-4 py-2 flex items-center justify-between">
@@ -167,14 +172,14 @@ const NavBar = () => {
                 <button
                   className="focus:outline-none my-auto h-full w-auto"
                   onClick={toggleProfileMenu}
-                  onBlur={() => setIsDropdownOpen(false)}
+                  onBlur={() => setIsDropdownOpend(false)}
                   onMouseEnter={toggleProfileMenu}
                 >
                   <div className="h-8 w-8 flex items-center justify-around scale-150">
                     <FaRegUserCircle />
                   </div>
                 </button>
-                {isDropdownOpen && (
+                {isDropdownOpend && (
                   <div className="absolute z-10 mt-2 bg-white rounded-lg shadow-lg">
                     <ul className="py-2">
                       <li className="text-black-300 px-4 py-2" src="#">
@@ -193,10 +198,58 @@ const NavBar = () => {
             </div>
 
             <div>
-              <button className="focus:outline-none">
-                {/* Cart Icon */}
-                <FaShoppingCart />
-              </button>
+              {/* cart button */}
+              <div className="ml-1 pl-1 relative lg:border-l-2">
+                <button
+                  className="focus:outline-none my-auto h-full w-auto"
+                  onClick={toggleProfileMenus}
+                  // onBlur={() => setIsDropdownOpens(false)}
+                  onMouseEnter={toggleProfileMenus}
+                >
+                  <div className="focus:outline-none h-8 w-8 flex items-center justify-around scale-150">
+                    <FaShoppingCart />
+                  </div>
+                </button>
+                {isDropdownOpens && (
+                  <div>
+                    {/* cart button */}
+                    <div className="ml-1 pl-1 relative lg:border-l-2">
+                      <button
+                        className="focus:outline-none my-auto h-full w-auto"
+                        onClick={toggleProfileMenus}
+                        // onBlur={() => setIsDropdownOpens(false)}
+                        // onMouseEnter={toggleProfileMenus}
+                      >
+                        <div className="focus:outline-none h-8 w-8 flex items-center justify-around scale-150">
+                          <FaShoppingCart />
+                        </div>
+                      </button>
+                      {isDropdownOpens && (
+                        <div className="fixed right-0 top-0 bottom-0 z-10 w-64 bg-white rounded-l-lg shadow-lg">
+                          <div className="p-6">
+                            <h5 className="flex flex-row justify-between mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                              ADD Items{" "}
+                              <div onClick={toggleProfileMenus}>
+                                <FaTimes />
+                              </div>
+                            </h5>
+                          </div>
+
+                          <div className="flex flex-col m-auto pb-4 font-normal text-center text-gray-700 dark:text-gray-400">
+                            items
+                            <button
+                              className="p-4  bg-blue-500  text-white rounded-b-lg hover:bg-blue-600"
+                              onClick={toggleProfileMenus} // Add onClick event to close the sidebar
+                            >
+                              complete purches
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

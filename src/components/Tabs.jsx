@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import Banner from "./Banner";
-import TabCaro from "./TabCaro";
 import BannerCard from "./BannerCard";
+// import { ImageContext } from "./ImageContext";
 
 const Tabs = () => {
+  // const { dispatch } = useContext(ImageContext);
+
   const [activeTab, setActiveTab] = useState("all");
   const [carouselData, setCarouselData] = useState([]);
 
@@ -13,9 +15,14 @@ const Tabs = () => {
     axios
       .get("http://localhost:8000/art") // Replace with your API endpoint
       .then((response) => {
-        console.log("response  data", response);
+        console.log("response  data gcgcg", response.data[0].video[0].image);
         setCarouselData(response.data[0].video);
-        console.log(response.data[0].video, "data api");
+        dispatch({
+          type: "SET_IMAGE",
+          payload: response.data[0].video[0].image,
+        });
+
+        console.log(response.data[0].video[0].image, "data api hv");
       })
       .catch((error) => {
         console.error("Error fetching carousel data:", error);

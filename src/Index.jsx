@@ -8,8 +8,12 @@ import Tabs from "./components/Tabs";
 import TabCaro from "./components/TabCaro";
 import Tre from "./components/Tre";
 import TrendingBar from "./components/TrendingBar";
+// import { ImageContext } from "./components/ImageContext";
+// import { useContext } from "react";
 
 function index() {
+  // const { state } = useContext(ImageContext);
+
   // const [carouselData, setCarouselData] = useState([]);
 
   // useEffect(() => {
@@ -503,10 +507,12 @@ function index() {
   //   console.log("data", myJson?.art);
   return (
     <div>
-      <section className="flex flex-col">
+      <section className="flex flex-col ">
+        {/* <div  */}
         <NavBar />
-        <div className="px-5 py-5 mx-5 my-4 ">
+        <div className="px-5 py-5 mx-5 my-4 bg-blue-100">
           <Tabs />
+          {/* </div> */}
         </div>
 
         {/* <TabCaro /> */}
